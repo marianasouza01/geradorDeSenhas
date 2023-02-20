@@ -6,7 +6,7 @@ let containerPassword = document.querySelector("#container-password");
 let tooltip = document.querySelector("#tooltip");
 var especiale = document.getElementById("especiale");
 
-let charset = "";
+let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 let novaSenha = "";
 
 sizePassword.innerHTML = sliderElement.value;
@@ -15,14 +15,13 @@ slider.oninput = function(){
 }
 
 
+
 function especial(){
     if (especiale.checked == true){
-         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#&*$";
-         console.log(charset);         
+         charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#&*$";       
     } else {
          charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-         console.log(charset);
-        }
+    }
 }
 
 
@@ -40,6 +39,14 @@ function generetePassword(){
 function copyPassword(){
     navigator.clipboard.writeText(novaSenha);
 }
+
+function copiedPassword(){
+    if (containerPassword.clicked == true){
+        document.getElementById("tooltip").innerHTML="Senha copiada com sucesso"
+    }
+} 
+
+
 
 
 //quando clicar em password mudar o 'clique para copiar a senha' para 'senha copiada' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
