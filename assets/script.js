@@ -38,13 +38,8 @@ function generetePassword(){
 
 function copyPassword(){
     navigator.clipboard.writeText(novaSenha);
+    document.getElementById("tooltip").innerHTML="Senha copiada com sucesso.";
 }
-
-function copiedPassword(){
-    if (containerPassword.clicked == true){
-        document.getElementById("tooltip").innerHTML="Senha copiada com sucesso"
-    }
-} 
 
 
 
